@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather Finder lets you search for the current weather and forecasts for your chosen city. Powered by OpenWeatherMap.">
+    <title>Weather Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.openweathermap.org">
+
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Finder</h1>
+            <p>Enter a city to see the current weather and forecast</p>
+        </header>
+        <main>
+            <form id="weather-form">
+                <label for="city-input">City Name</label>
+                <input type="text" id="city-input" placeholder="Enter city name" required>
+                <label for="hours-select">Select forecast duration</label>
+                <select id="hours-select">
+                    <option value="3">3 timmar</option>
+                    <option value="6">6 timmar</option>
+                    <option value="9">9 timmar</option>
+                    <option value="12">12 timmar</option>
+                </select>
+                <button type="submit" id="searchButton">Get Weather</button>
+            </form>
+            <div id="loader" class="hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather...</p>
+            </div>
+            <div id="weather-result" class="hidden"></div>
+            <p id="error-message" class="error hidden" aria-live="polite"></p>
+        </main>
+        <footer>
+            <p>Powered by OpenWeatherMap</p>
+        </footer>
+    </div> 
+    <script type="module" src="script.js" defer></script>
+</body>
+</html>
+
